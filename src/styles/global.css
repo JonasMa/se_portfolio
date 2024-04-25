@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'Inter';
+    font-style: bold;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/fonts/inter/Inter-Bold.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-style: light;
+    font-weight: 200;
+    font-display: swap;
+    src: url(/fonts/inter/Inter-Light.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/jetbrains-mono/JetBrainsMono-Regular.woff2) format('woff2');
+}
