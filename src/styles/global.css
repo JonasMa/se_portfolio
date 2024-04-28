@@ -25,3 +25,7 @@
     font-display: swap;
     src: url(/fonts/jetbrains-mono/JetBrainsMono-Regular.woff2) format('woff2');
 }
+
+body {
+    @apply bg-blue-dark;
+  }
