@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Job, { JobProps } from './job';
+import Jobs, { Job, JobProps } from './job';
 
 const CV: React.FC = () => {
   const jobsData = useStaticQuery(graphql`
@@ -20,8 +20,8 @@ const CV: React.FC = () => {
       }
     }
   `);
-  const jobs: JobProps[] = jobsData.allJobsJson.edges.map(
-    (edge: { node: JobProps }) => edge.node
+  const jobs: Job[] = jobsData.allJobsJson.edges.map(
+    (edge: { node: Job }) => edge.node
   );
 
   return (
@@ -45,7 +45,7 @@ const CV: React.FC = () => {
           Experience
         </h3>
         <section>
-          {jobs && jobs.map((job) => <Job {...job} />)}
+          <Jobs jobs={jobs} />
         </section>
       </main>
     </div>

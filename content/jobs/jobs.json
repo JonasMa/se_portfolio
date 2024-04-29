@@ -2,7 +2,37 @@
   {
     "company": "Google",
     "duration": { "from": "2022", "to": "2023" },
-    "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+    "description": "• Analyzed utilization patterns and identified opportunities to optimize usage, resulting in increased efficiency and productivity.\n • Independently worked on identifying, conceptualizing and developing new features, collaborating with team members for planning and alignment.\n • Ensured highest quality of work through thorough testing, code reviews, and adherence to best practices and standards",
     "technologies": ["TypeScript", "Angular", "VSCode API"]
+  },
+  {
+    "company": "Zühlke",
+    "duration": { "from": "2019", "to": "2022" },
+    "description": "• Developed and improved user-friendly interfaces across various platforms. Supported backend integration for improved system cohesion.\n • Oversaw team progress, ensuring timely delivery of milestones and coordinating tasks effectively\n • Worked closely with web and interaction designers, UX teams, and backend developers to ensure seamless project integration.\n • Developed cross-browser compatible libraries, conducted extensive testing, and provided ongoing maintenance and support.",
+    "technologies": ["TypeScript", "Angular", "Stencil", "React"]
+  },
+  {
+    "company": "MaibornWolff",
+    "duration": { "from": "2017", "to": "2018" },
+    "description": "• Developed immersive VR and AR applications using Unity, leveraging cuttingedge technologies to create engaging user experiences.\n • Explored cutting edge VR and AR technologies with the intent to extract value for potential users\n • Contributed innovative ideas and solutions to enhance the functionality and user experience of the applications.",
+    "technologies": ["Unity", "Virtual Reality", "C#"]
+  },
+  {
+    "company": "BMW",
+    "duration": { "from": "2016", "to": "2017" },
+    "description": "• Explored and implemented a custom interior control app for the users smartphone, focusing on improving user experience and comfort\n • Reverse engineered existing interior control functionalities to refine and integrate them into a more intelligent and comprehensive system",
+    "technologies": ["Android", "Reverse Engineering"]
+  },
+  {
+    "company": "KundoXT",
+    "duration": { "from": "2016", "to": "" },
+    "description": "• Developed a platform-agnostic smart home app\n • Implemented features full-stack where appropriate",
+   "technologies": ["JavaScript", "Angular", "Apache Cordova"]
+  },
+  {
+    "company": "Audi",
+    "duration": { "from": "2015", "to": "" },
+    "description": "• Researched \n • Reverse engineered existing interior control functionalities to refine and integrate them into a more intelligent and comprehensive system",
+    "technologies": ["Unity", "Virtual Reality", "C#"]
   }
 ]
