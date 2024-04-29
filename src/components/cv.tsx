@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Jobs, { Job, JobProps } from './job';
+import Jobs, { Job } from './job';
 
 const CV: React.FC = () => {
   const jobsData = useStaticQuery(graphql`
@@ -13,7 +13,7 @@ const CV: React.FC = () => {
               from
               to
             }
-            description
+            descriptionBullets
             technologies
           }
         }
