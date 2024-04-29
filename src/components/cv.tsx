@@ -26,13 +26,13 @@ const CV: React.FC = () => {
 
   return (
     <div className="grid lg:grid-cols-2 gap-8 px-4 lg:px-12 py-20 container mx-auto">
-      <header>
+      <header className="lg:pt-8 lg:sticky lg:top-0 lg:self-start">
         <h1 className="text-6xl font-bold text-yellow">Jonas Mattes</h1>
         <h2 className="font-mono text-blue-light">
           Software Engineer who loves to build intuitive web experiences.
         </h2>
       </header>
-      <main className="font-mono text-sm text-white">
+      <main className="lg:pt-10 font-mono text-sm text-white overflow-y-auto">
         <h3 className="lg:hidden font-sans text-yellow mb-5 text-base">
           About
         </h3>
