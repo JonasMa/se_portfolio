@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react';
 
 export const onRenderBody = ({ setHeadComponents }) => {
   setHeadComponents([
@@ -26,5 +26,5 @@ export const onRenderBody = ({ setHeadComponents }) => {
       crossOrigin="anonymous"
       key="monoRegular"
     />,
-  ])
-}
+  ]);
+};

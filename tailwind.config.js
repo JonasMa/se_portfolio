@@ -8,13 +8,13 @@ module.exports = {
     extend: {
       gridTemplateColumns: {
         '2-auto': 'repeat(2, auto)',
-      }
+      },
     },
     colors: {
       'blue-dark': '#023047',
       'blue-light': '#8ECAE6',
-      'white': '#FFF',
-      'yellow': '#FFB703',
+      white: '#FFF',
+      yellow: '#FFB703',
       'yellow-light': '#FFB7031A',
     },
     fontFamily: {
@@ -23,4 +23,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};
