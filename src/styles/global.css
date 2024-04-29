@@ -28,4 +28,5 @@
 
 body {
     @apply bg-blue-dark;
+    background: linear-gradient(180deg, rgb(2, 48, 71) 0%, rgb(5, 62, 91) 100%);
   }
