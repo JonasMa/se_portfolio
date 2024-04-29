@@ -1,17 +1,29 @@
 import * as React from 'react';
-import Experience, { ExperienceProps } from './experience';
-
-const experiences: ExperienceProps[] = [
-  {
-    company: 'Google',
-    duration: { from: '2022', to: '2023' },
-    description:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-    technologies: ['TypeScript', 'Angular', 'VSCode API'],
-  },
-];
+import { useStaticQuery, graphql } from 'gatsby';
+import Job, { JobProps } from './job';
 
 const CV: React.FC = () => {
+  const jobsData = useStaticQuery(graphql`
+    query {
+      allJobsJson {
+        edges {
+          node {
+            company
+            duration {
+              from
+              to
+            }
+            description
+            technologies
+          }
+        }
+      }
+    }
+  `);
+  const jobs: JobProps[] = jobsData.allJobsJson.edges.map(
+    (edge: { node: JobProps }) => edge.node
+  );
+
   return (
     <div className="grid lg:grid-cols-2 gap-8 px-4 lg:px-12 py-20 container mx-auto">
       <header>
@@ -21,7 +33,9 @@ const CV: React.FC = () => {
         </h2>
       </header>
       <main className="font-mono text-sm text-white">
-        <h3 className="lg:hidden font-sans text-yellow mb-5 text-base">About</h3>
+        <h3 className="lg:hidden font-sans text-yellow mb-5 text-base">
+          About
+        </h3>
         <section className="mb-16">
           Some text about me and what I do. What do I like about my work and
           what are my preferences? What is my niche? Also some private stuff
@@ -31,9 +45,7 @@ const CV: React.FC = () => {
           Experience
         </h3>
         <section>
-          {experiences.map((experience) => (
-            <Experience {...experience} />
-          ))}
+          {jobs && jobs.map((job) => <Job {...job} />)}
         </section>
       </main>
     </div>

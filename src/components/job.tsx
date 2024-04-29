@@ -2,14 +2,14 @@ import * as React from "react";
 
 export interface CompanyExperience {}
 
-export interface ExperienceProps {
+export interface JobProps {
   company: string;
   duration: { from: string; to: string };
   description: string;
   technologies: string[];
 }
 
-const Experience: React.FC<ExperienceProps> = ({
+const Job: React.FC<JobProps> = ({
   company,
   duration,
   description,
@@ -35,4 +35,4 @@ const Experience: React.FC<ExperienceProps> = ({
   );
 };
 
-export default Experience;
+export default Job;
