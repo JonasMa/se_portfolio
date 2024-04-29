@@ -16,8 +16,8 @@ const Experience: React.FC<ExperienceProps> = ({
   technologies,
 }) => {
   return (
-    <div className="grid grid-cols-2-auto col-auto gap-4">
-      <div className="whitespace-nowrap">
+    <div className="flex flex-col md:grid md:grid-cols-2-auto gap-4">
+      <div className="whitespace-nowrap flex justify-between md:block">
         <h4 className="font-sans font-bold">{company}</h4>
         <p className="text-blue-light">
           {duration.from} - {duration.to}
