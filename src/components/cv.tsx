@@ -27,7 +27,7 @@ const CV: React.FC = () => {
   return (
     <div className="grid lg:grid-cols-2 gap-8 px-4 lg:px-12 py-20 container mx-auto">
       <header>
-        <h1 className="text-7xl font-bold text-yellow">Jonas Mattes</h1>
+        <h1 className="text-6xl font-bold text-yellow">Jonas Mattes</h1>
         <h2 className="font-mono text-blue-light">
           Software Engineer who loves to build intuitive web experiences.
         </h2>
