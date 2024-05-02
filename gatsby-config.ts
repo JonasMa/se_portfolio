@@ -9,7 +9,7 @@ const config: GatsbyConfig = {
   // If you use VSCode you can also use the GraphQL plugin
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
-  plugins: ['gatsby-plugin-postcss','gatsby-transformer-json',
+  plugins: ['gatsby-plugin-postcss','gatsby-transformer-json', // 'gatsby-plugin-webpack-bundle-analyser-v2', // Uncomment for to see webpack bundle info after build 
   {
     resolve: 'gatsby-source-filesystem',
     options: {
