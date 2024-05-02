@@ -1,13 +1,16 @@
-import * as React from "react";
-import type { HeadFC, PageProps } from "gatsby";
-import CV from "../components/cv";
+import * as React from 'react';
+import type { HeadFC, PageProps } from 'gatsby';
+import CV from '../components/cv';
 
 const IndexPage: React.FC<PageProps> = () => {
-  return (
-    <CV/>
-  );
+  return <CV />;
 };
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Jonas Mattes</title>;
+export const Head: HeadFC = () => (
+  <>
+    <title>Jonas Mattes</title>
+    <html lang="en" />
+  </>
+);
