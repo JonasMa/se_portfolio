@@ -1,38 +1,20 @@
 import * as React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import Jobs, { Job } from './job';
+import { Link } from 'gatsby';
 import SocialMediaIcons from './social';
+import Loader from './loader';
+
+// Jobs does some JSON parsing and may block inital render.
+const Jobs = React.lazy(() => import('./jobs'));
 
 const CV: React.FC = () => {
-  const jobsData = useStaticQuery(graphql`
-    query {
-      allJobsJson {
-        edges {
-          node {
-            company
-            duration {
-              from
-              to
-            }
-            descriptionBullets
-            technologies
-          }
-        }
-      }
-    }
-  `);
-  const jobs: Job[] = jobsData.allJobsJson.edges.map(
-    (edge: { node: Job }) => edge.node
-  );
-
   return (
     <div className="lg:flex gap-8 px-4 container mx-auto min-h-screen">
       <div className="py-20 lg:pt-32 lg:sticky lg:top-0 lg:self-start lg:w-1/2 lg:min-h-screen flex flex-col gap-4 lg:justify-between">
         <header>
-            <h1 className="text-6xl font-bold text-yellow">Jonas Mattes</h1>
-            <h2 className="font-mono text-blue-light">
-              Software Engineer who loves to build intuitive web experiences.
-            </h2>
+          <h1 className="text-6xl font-bold text-yellow">Jonas Mattes</h1>
+          <h2 className="font-mono text-blue-light">
+            Software Engineer who loves to build intuitive web experiences.
+          </h2>
         </header>
         <footer className="flex gap-12 font-mono text-blue-light ">
           <SocialMediaIcons />
@@ -52,7 +34,9 @@ const CV: React.FC = () => {
           Experience
         </h3>
         <section>
-          <Jobs jobs={jobs} />
+          <React.Suspense fallback={<Loader />}>
+            <Jobs />
+          </React.Suspense>
         </section>
         <section className="mt-16 font-sans text-blue-light">
           This website is 100% self built in <strong>React</strong> with <strong>Gatsby</strong> and <strong>Tailwind CSS</strong>. Check it out on my <strong className="underline"><a href="https://github.com/JonasMa/se_portfolio" target="_blank">GitHub</a></strong> if you're interested.<br/>
