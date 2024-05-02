@@ -26,9 +26,13 @@ const CV: React.FC = () => {
           About
         </h3>
         <section className="mb-16">
-          Some text about me and what I do. What do I like about my work and
-          what are my preferences? What is my niche? Also some private stuff
-          will be apprecialted
+          With a journey that began somewhat by chance in computer science, I
+          quickly found my passion in the user-centered realm of web
+          development. Over the past five years, I've honed my skills,
+          specializing in crafting beautiful, functional, and accessible
+          websites that prioritize user experience. Comfortable navigating the
+          entire stack, I thrive on bringing together design and functionality
+          to create digital experiences that delight users.
         </section>
         <h3 className="lg:hidden font-sans text-yellow mb-5 text-base">
           Experience
