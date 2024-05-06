@@ -1,21 +1,34 @@
-import * as React from 'react';
+import React, { useEffect, useRef, lazy, FC } from 'react';
 import Loader from './loader';
 import Disclaimer from './disclaimer';
+import { MenuItem } from './menu';
 
 // Jobs does some JSON parsing and may block inital render.
-const Jobs = React.lazy(() => import('./jobs'));
+const Jobs = lazy(() => import('./jobs'));
 
-// Seaction header disappears on small screens
-const SectionHeader: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => (
-  <h3 className="lg:hidden font-sans text-yellow mb-5 text-base">{children}</h3>
-);
+const CV: FC<{ selectedSection: MenuItem }> = ({ selectedSection }) => {
+  const sectionRefs: { [key in MenuItem]: any } = {
+    about: useRef<HTMLElement>(),
+    experience: useRef<HTMLElement>(),
+  };
 
-const CV: React.FC = () => {
+  useEffect(() => {
+    window.requestAnimationFrame(() => {
+      window.scrollTo({
+        top: sectionRefs[selectedSection].current.offsetTop - 32,
+        behavior: 'smooth',
+      });
+    });
+  }, [selectedSection]);
+
   return (
     <>
-      <SectionHeader>About</SectionHeader>
+      <h3
+        ref={sectionRefs.about}
+        className="font-sans text-yellow mb-5 text-base"
+      >
+        About
+      </h3>
       <section className="mb-16">
         With a journey that began somewhat by chance in computer science, I
         quickly found my passion in the user-centered realm of web development.
@@ -25,7 +38,12 @@ const CV: React.FC = () => {
         bringing together design and functionality to create digital experiences
         that delight users.
       </section>
-      <SectionHeader>Experience</SectionHeader>
+      <h3
+        ref={sectionRefs.experience}
+        className="font-sans text-yellow mb-5 text-base"
+      >
+        Experience
+      </h3>
       <section>
         <React.Suspense fallback={<Loader />}>
           <Jobs />
