@@ -6,6 +6,13 @@ import Loader from './loader';
 // Jobs does some JSON parsing and may block inital render.
 const Jobs = React.lazy(() => import('./jobs'));
 
+// Seaction header disappears on small screens
+const SectionHeader: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => (
+  <h3 className="lg:hidden font-sans text-yellow mb-5 text-base">{children}</h3>
+);
+
 const CV: React.FC = () => {
   return (
     <div className="lg:flex gap-8 px-4 container mx-auto min-h-screen">
@@ -22,9 +29,7 @@ const CV: React.FC = () => {
         </footer>
       </div>
       <main className="lg:pt-36 lg:pb-20 lg:w-1/2 font-mono text-sm text-white overflow-y-auto flex-shrink-0">
-        <h3 className="lg:hidden font-sans text-yellow mb-5 text-base">
-          About
-        </h3>
+        <SectionHeader>About</SectionHeader>
         <section className="mb-16">
           With a journey that began somewhat by chance in computer science, I
           quickly found my passion in the user-centered realm of web
@@ -34,9 +39,7 @@ const CV: React.FC = () => {
           entire stack, I thrive on bringing together design and functionality
           to create digital experiences that delight users.
         </section>
-        <h3 className="lg:hidden font-sans text-yellow mb-5 text-base">
-          Experience
-        </h3>
+        <SectionHeader>Experience</SectionHeader>
         <section>
           <React.Suspense fallback={<Loader />}>
             <Jobs />
