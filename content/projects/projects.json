@@ -1,0 +1,124 @@
+[
+  {
+    "company": "Google",
+    "title": "Streamlining Code Review",
+    "duration": { "from": "2022", "to": "2023" },
+    "descriptionBullets": [
+      "Optimizing code review process for Google software engineers.",
+      "Analyzed utilization patterns and identified opportunities to optimize usage, resulting in increased efficiency and productivity.",
+      "Independently worked on identifying, conceptualizing and developing new features, collaborating with team members for planning and alignment.",
+      "Ensured highest quality of work through thorough testing, code reviews, and adherence to best practices and standards."
+    ],
+    "technologies": ["Angular", "TypeScript", "VSCode API", "Jest"],
+    "link": ""
+  },
+  {
+    "company": "Visana",
+    "title": "Insurance Calculator",
+    "duration": { "from": "2021", "to": "2022" },
+    "descriptionBullets": [
+      "Developed an online insurance calculator.",
+      "Designed and developed components for the product.",
+      "Onboarding new team members.",
+      "Supported backend integration for improved system cohesion.",
+      "Oversaw team progress, ensuring timely delivery of milestones and coordinating tasks effectively.",
+      "Worked closely with web and interaction designers, UX teams, and backend developers to ensure seamless project integration."
+    ],
+    "technologies": [
+      "Angular",
+      "TypeScript",
+      "NgRx",
+      "Cypress",
+      "Karma",
+      "Java"
+    ],
+    "link": "https://dap.visana.ch/offer/"
+  },
+  {
+    "company": "SBB",
+    "title": "Modernize the Ticket Vending Maching",
+    "duration": { "from": "2020", "to": "2021" },
+    "descriptionBullets": [
+      "Technological redevelopment of the ticket vending machine.",
+      "Implementation, analysis, and testing of the user interface.",
+      "Supported backend integration for improved system cohesion.",
+      "Worked closely with web and interaction designers, UX teams, and backend developers to ensure seamless project integration."
+    ],
+    "technologies": [
+      "TypeScript",
+      "Stencil",
+      "Jest",
+      "Cypress",
+      "Webpack",
+      "Java"
+    ],
+    "link": "https://www.watson.ch/schweiz/sbb/867901656-sbb-so-sieht-der-neue-billetautomat-aus"
+  },
+  {
+    "company": "SBB",
+    "title": "Custom Tracking Library",
+    "duration": { "from": "2020", "to": "2021" },
+    "descriptionBullets": [
+      "Developed cross-browser compatible library, conducted extensive testing, and provided ongoing maintenance and support."
+    ],
+    "technologies": ["JavaScript", "Karma", "Puppeteer", "Babel", "Webpack"],
+    "link": "https://www.npmjs.com/package/@swissfederalrailways/internet-tracking"
+  },
+  {
+    "company": "Zühlke",
+    "title": "Mobile Security Training Quiz",
+    "duration": { "from": "2019", "to": "2020" },
+    "descriptionBullets": [
+      "Led frontend development for a mobile-first training quiz.",
+      "Coordination, planning, technical implementation, and testing."
+    ],
+    "technologies": ["React", "JavaScript", "Redux", "Jest"],
+    "link": "https://appsource.microsoft.com/en-us/product/web-apps/zuehlke-engineering.secured"
+  },
+  {
+    "company": "MaibornWolff",
+    "title": "Technological Research in AR & VR",
+    "duration": { "from": "2017", "to": "2018" },
+    "descriptionBullets": [
+      "Developed immersive VR and AR applications using Unity, leveraging cuttingedge technologies to create engaging user experiences.",
+      "Explored cutting edge VR and AR technologies with the intent to extract value for potential users",
+      "Contributed innovative ideas and solutions to enhance the functionality and user experience of the applications."
+    ],
+    "technologies": ["Unity", "C#", "ArKit"],
+    "link": ""
+  },
+  {
+    "company": "BMW",
+    "title": "Car Interior Control System Prototype",
+    "duration": { "from": "2016", "to": "2017" },
+    "descriptionBullets": [
+      "Exploratory development of concepts for in-vehicle interior controls.",
+      "Technical analysis and reverse engineering of existing technologies."
+    ],
+    "technologies": ["Android", "Java", "Reverse Engineering"],
+    "link": ""
+  },
+  {
+    "company": "KundoXT",
+    "title": "Smart Home Control",
+    "duration": { "from": "2016", "to": "" },
+    "descriptionBullets": [
+      "Led the implementation of a smart home control system.",
+      "Technical conception, implementation, and collaboration between different teams."
+    ],
+    "technologies": ["Angular", "JavaScript", "Apache Cordova"],
+    "link": ""
+  },
+  {
+    "company": "Audi",
+    "title": "In-Car VR Experience Prototype",
+    "duration": { "from": "2015", "to": "" },
+    "descriptionBullets": [
+      "Researched and implemented an in-car VR experience using live vehicle data.",
+      "Implemented connection between car and PC.",
+      "Researched user acceptance and motion sickness of the prototype."
+    ],
+    "technologies": ["Unity", "C#", "ADTF", "C++"],
+    "link": "https://www.techradar.com/news/say-hello-to-holoride-audis-revolutionary-in-car-vr-platform"
+  }
+]

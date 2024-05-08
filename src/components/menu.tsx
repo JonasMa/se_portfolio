@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export type MenuItem = 'about' | 'experience';
+export type MenuItem = 'about' | 'jobs' | 'projects';
 
 interface MenuProps {
   selectedItem: MenuItem;
@@ -35,10 +35,16 @@ const Menu: React.FC<MenuProps> = ({ selectedItem, onItemSelected }) => {
         About
       </Item>
       <Item
-        isSelected={selectedItem === 'experience'}
-        onClick={() => onItemSelected('experience')}
+        isSelected={selectedItem === 'jobs'}
+        onClick={() => onItemSelected('jobs')}
       >
         Experience
+      </Item>
+      <Item
+        isSelected={selectedItem === 'projects'}
+        onClick={() => onItemSelected('projects')}
+      >
+        Projects
       </Item>
     </ul>
   );
