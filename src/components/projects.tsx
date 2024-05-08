@@ -43,48 +43,43 @@ const Projects: React.FC = () => {
         (
           { company, title, duration, descriptionBullets, technologies, link },
           index
-        ) => (
-          <>
-            <div
-              key={`${index}-0`}
-              className="whitespace-nowrap flex justify-between md:block"
-            >
-              <h4 className="font-sans font-bold">{company}</h4>
-              <p className="text-blue-light">
-                {duration.from}
-                {duration.to && ' - ' + duration.to}
-              </p>
-            </div>
-            <div>
-              <h4 className="font-sans font-bold mb-4">{title}</h4>
-              <ul
-                key={`${index}-1`}
-                className="text-m list-disc marker:text-blue-light"
-              >
-                {descriptionBullets.map((bullet) => (
-                  <li>{bullet}</li>
-                ))}
-              </ul>
-              {link && (
-                <div className="col-start-2 underline text-blue-light mt-2">
-                  <a href={link} target="_blank">
-                    Artifarcts
-                  </a>
-                </div>
-              )}
-            </div>
-            <div key={`${index}-2`} className="col-start-2 space-x-2 mb-4">
-              {technologies.map((technology, index) => (
-                <span
-                  key={index}
-                  className="text-yellow bg-yellow-light px-2 py-1 rounded-full"
-                >
-                  {technology}
-                </span>
+        ) => [
+          <div
+            key={`${index}-0`}
+            className="whitespace-nowrap flex justify-between md:block"
+          >
+            <h4 className="font-sans font-bold">{company}</h4>
+            <p className="text-blue-light">
+              {duration.from}
+              {duration.to && ' - ' + duration.to}
+            </p>
+          </div>,
+          <div key={`${index}-1`}>
+            <h4 className="font-sans font-bold mb-4">{title}</h4>
+            <ul className="text-m list-disc marker:text-blue-light">
+              {descriptionBullets.map((bullet, bulletIndex) => (
+                <li key={bulletIndex}>{bullet}</li>
               ))}
-            </div>
-          </>
-        )
+            </ul>
+            {link && (
+              <div className="col-start-2 underline text-blue-light mt-2">
+                <a href={link} target="_blank">
+                  Artifarcts
+                </a>
+              </div>
+            )}
+          </div>,
+          <div key={`${index}-2`} className="col-start-2 space-x-2 mb-4">
+            {technologies.map((technology, techIndex) => (
+              <span
+                key={techIndex}
+                className="text-yellow bg-yellow-light px-2 py-1 rounded-full"
+              >
+                {technology}
+              </span>
+            ))}
+          </div>,
+        ]
       )}
     </div>
   );
