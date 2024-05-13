@@ -69,7 +69,7 @@ const Projects: React.FC = () => {
               </div>
             )}
           </div>,
-          <div key={`${index}-2`} className="col-start-2 space-x-2 mb-4">
+          <div key={`${index}-2`} className="flex flex-wrap col-start-2 mb-4 gap-2">
             {technologies.map((technology, techIndex) => (
               <span
                 key={techIndex}
