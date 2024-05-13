@@ -19,6 +19,13 @@ const config: GatsbyConfig = {
         path: './content/',
       },
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        title: `Jonas Mattes`,
+        icon: `src/images/icon.png`,
+      },
+    },
   ],
 };
 
