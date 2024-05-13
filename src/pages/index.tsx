@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'gatsby';
 import type { HeadFC, PageProps } from 'gatsby';
 import CV from '../components/cv';
@@ -6,7 +6,12 @@ import SocialMediaIcons from '../components/social';
 import Menu, { MenuItem } from '../components/menu';
 
 const IndexPage: React.FC<PageProps> = () => {
-  const [selectedItem, setSelectedItem] = React.useState<MenuItem>('about');
+  const [selectedItem, setSelectedItem] = useState<MenuItem>('about');
+  const scrollTo = useRef<MenuItem|undefined>(undefined);
+  const onItemSelected = (item: MenuItem) => {
+    setSelectedItem(item);
+    scrollTo.current = item;
+  }
 
   return (
     <div className="lg:flex gap-8 px-4 container mx-auto min-h-screen">
@@ -17,14 +22,14 @@ const IndexPage: React.FC<PageProps> = () => {
             Software Engineer who loves to build intuitive web experiences.
           </h2>
         </header>
-        <Menu selectedItem={selectedItem} onItemSelected={setSelectedItem} />
+        <Menu selectedItem={selectedItem} onItemSelected={onItemSelected} />
         <footer className="flex gap-12 font-mono text-blue-light ">
           <SocialMediaIcons />
           <Link to="/impressum">Impressum</Link>
         </footer>
       </div>
       <main className="lg:pt-36 lg:pb-20 lg:w-1/2 font-mono text-sm text-white overflow-y-auto flex-shrink-0">
-        <CV selectedSection={selectedItem} />
+        <CV scrollToSection={scrollTo.current} onScrolledIntoView={setSelectedItem} />
       </main>
     </div>
   );

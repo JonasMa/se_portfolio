@@ -1,37 +1,42 @@
-import React, { useEffect, useRef, lazy, FC } from 'react';
+import React, { useEffect, Suspense, lazy, FC, useRef } from 'react';
 import Loader from './loader';
 import Disclaimer from './disclaimer';
 import { MenuItem } from './menu';
 import Projects from './projects';
+import CvSection from './cv-section';
 
 // Jobs does some JSON parsing and may block inital render.
 const Jobs = lazy(() => import('./jobs'));
 
-const CV: FC<{ selectedSection: MenuItem }> = ({ selectedSection }) => {
+const CV: FC<{
+  scrollToSection?: MenuItem;
+  onScrolledIntoView: (item: MenuItem) => void;
+}> = ({ scrollToSection, onScrolledIntoView }) => {
   const sectionRefs: { [key in MenuItem]: any } = {
-    about: useRef<HTMLElement>(),
-    jobs: useRef<HTMLElement>(),
-    projects: useRef<HTMLElement>(),
+    about: useRef(null),
+    jobs: useRef(null),
+    projects: useRef(null),
   };
 
   useEffect(() => {
+    if (!scrollToSection) return;
+
+    const top =
+      scrollToSection === 'about'
+        ? 0
+        : sectionRefs[scrollToSection].current?.offsetTop - 64;
     window.requestAnimationFrame(() => {
-      window.scrollTo({
-        top: sectionRefs[selectedSection].current.offsetTop - 32,
-        behavior: 'smooth',
-      });
+      window.scrollTo({ top, behavior: 'smooth' });
     });
-  }, [selectedSection]);
+  }, [scrollToSection]);
 
   return (
     <>
-      <h3
+      <CvSection
+        title="About"
         ref={sectionRefs.about}
-        className="font-sans text-yellow mb-5 text-base"
+        onInView={() => onScrolledIntoView('about')}
       >
-        About
-      </h3>
-      <section>
         With a journey that began somewhat by chance in computer science, I
         quickly found my passion in the user-centered realm of web development.
         Over the past five years, I've honed my skills, specializing in crafting
@@ -39,29 +44,25 @@ const CV: FC<{ selectedSection: MenuItem }> = ({ selectedSection }) => {
         experience. Comfortable navigating the entire stack, I thrive on
         bringing together design and functionality to create digital experiences
         that delight users.
-      </section>
-      <h3
+      </CvSection>
+      <CvSection
+        title="Experience"
         ref={sectionRefs.jobs}
-        className="font-sans text-yellow mb-5 mt-16 text-base"
+        onInView={() => onScrolledIntoView('jobs')}
       >
-        Experience
-      </h3>
-      <section>
-        <React.Suspense fallback={<Loader />}>
+        <Suspense fallback={<Loader />}>
           <Jobs />
-        </React.Suspense>
-      </section>
-      <h3
+        </Suspense>
+      </CvSection>
+      <CvSection
+        title="Projects"
         ref={sectionRefs.projects}
-        className="font-sans text-yellow mb-5 mt-16 text-base"
+        onInView={() => onScrolledIntoView('projects')}
       >
-        Projects
-      </h3>
-      <section>
-        <React.Suspense fallback={<Loader />}>
+        <Suspense fallback={<Loader />}>
           <Projects />
-        </React.Suspense>
-      </section>
+        </Suspense>
+      </CvSection>
       <section className="mt-16 font-sans text-blue-light">
         <Disclaimer />
       </section>
