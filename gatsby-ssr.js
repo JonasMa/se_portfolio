@@ -20,7 +20,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
     />,
     <link
       rel="preload"
-      href="/fonts/jetbrains-mono/JetbrainsMono-Regular.woff2"
+      href="/fonts/jetbrains-mono/JetBrainsMono-Regular.woff2"
       as="font"
       type="font/woff2"
       crossOrigin="anonymous"
