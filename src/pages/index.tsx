@@ -25,7 +25,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <Menu selectedItem={selectedItem} onItemSelected={onItemSelected} />
         <footer className="flex gap-12 font-mono text-blue-light ">
           <SocialMediaIcons />
-          <Link to="/impressum">Impressum</Link>
+          <Link to="/impressum" className="hover:text-yellow">Impressum</Link>
         </footer>
       </div>
       <main className="lg:pt-36 lg:pb-20 lg:w-3/5 font-mono text-sm text-white overflow-y-auto flex-shrink-0">
