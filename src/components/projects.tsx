@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
+import Chips from './chips';
 
 export interface CompanyExperience {}
 
@@ -69,16 +70,7 @@ const Projects: React.FC = () => {
               </div>
             )}
           </div>,
-          <div key={`${index}-2`} className="flex flex-wrap col-start-2 mb-4 gap-2">
-            {technologies.map((technology, techIndex) => (
-              <span
-                key={techIndex}
-                className="text-yellow bg-yellow-light px-2 py-1 rounded-full"
-              >
-                {technology}
-              </span>
-            ))}
-          </div>,
+          <Chips key={`${index}-2`} className="col-start-2" chips={technologies}/>
         ]
       )}
     </div>
