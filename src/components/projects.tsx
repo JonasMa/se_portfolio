@@ -64,7 +64,7 @@ const Projects: React.FC = () => {
             {link && (
               <div className="col-start-2 underline text-blue-light mt-2">
                 <a href={link} target="_blank">
-                  Artifarcts
+                  Artifacts
                 </a>
               </div>
             )}

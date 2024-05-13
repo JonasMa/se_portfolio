@@ -52,7 +52,6 @@
     "company": "Audi",
     "duration": { "from": "2015", "to": "" },
     "descriptionBullets": [
-      "Researched ",
       "Reverse engineered existing interior control functionalities to refine and integrate them into a more intelligent and comprehensive system"
     ],
     "technologies": ["Unity", "Virtual Reality", "C#"]
