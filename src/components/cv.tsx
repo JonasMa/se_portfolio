@@ -4,6 +4,7 @@ import Disclaimer from './disclaimer';
 import { MenuItem } from './menu';
 import CvSection from './cv-section';
 import { Trans } from 'react-i18next';
+import { useFocusedSection } from '../hooks/useFocusedSection';
 
 // Jobs does some JSON parsing and may block inital render.
 const Jobs = lazy(() => import('./jobs'));
@@ -30,6 +31,22 @@ const CV: FC<{
       window.scrollTo({ top, behavior: 'smooth' });
     });
   }, [scrollToSection]);
+  
+  const [focusedSection, addSection, removeSection] = useFocusedSection();
+
+
+  useEffect(()=>{
+    if(!focusedSection) return;
+    onScrolledIntoView(focusedSection);
+  }, [focusedSection]);
+
+  const onViewChange = (isVisible: boolean, item: MenuItem) => {
+    if(isVisible){
+      addSection(item);
+    } else {
+      removeSection(item);
+    }
+  }
 
   return (
     <>
@@ -37,6 +54,7 @@ const CV: FC<{
         title="About"
         ref={sectionRefs.about}
         onInView={() => onScrolledIntoView('about')}
+        onViewChange={(isVisible) => onViewChange(isVisible,'about')}
       >
         <Trans i18nKey="about"/>
       </CvSection>
@@ -44,6 +62,7 @@ const CV: FC<{
         title="Experience"
         ref={sectionRefs.jobs}
         onInView={() => onScrolledIntoView('jobs')}
+        onViewChange={(isVisible) => onViewChange(isVisible,'jobs')}
       >
         <Suspense fallback={<Loader />}>
           <Jobs />
@@ -53,6 +72,7 @@ const CV: FC<{
         title="Projects"
         ref={sectionRefs.projects}
         onInView={() => onScrolledIntoView('projects')}
+        onViewChange={(isVisible) => onViewChange(isVisible,'projects')}
       >
         <Suspense fallback={<Loader />}>
           <Projects />

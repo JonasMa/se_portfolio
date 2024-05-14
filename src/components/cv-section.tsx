@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactNode } from 'react';
+import React, { forwardRef, ReactNode, useEffect, useState } from 'react';
 import { InView } from 'react-intersection-observer';
 
 const CvSection = forwardRef<
@@ -7,12 +7,21 @@ const CvSection = forwardRef<
     title: string;
     children: ReactNode;
     onInView: () => void;
+    onViewChange: (inView: boolean) => void;
   }
->(({ children, title, onInView }, ref) => {
+>(({ children, title, onInView, onViewChange }, ref) => {
+
+
+  const onChange = (inView: boolean) => {
+    if (inView) {
+      onInView();
+    }
+    onViewChange(inView);
+  };
   return (
     <InView
       as="div"
-      onChange={(inView) => inView && onInView()}
+      onChange={onChange}
       threshold={0}
       rootMargin="-25% 0px -55% 0px"
     >
