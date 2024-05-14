@@ -2,58 +2,41 @@
   {
     "company": "Google",
     "duration": { "from": "2022", "to": "2023" },
-    "descriptionBullets": [
-      "Analyzed utilization patterns and identified opportunities to optimize usage, resulting in increased efficiency and productivity.",
-      "Independently worked on identifying, conceptualizing and developing new features, collaborating with team members for planning and alignment.",
-      "Ensured highest quality of work through thorough testing, code reviews, and adherence to best practices and standards"
-    ],
+    "descriptionBullets": ["google-0", "google-1", "google-2"],
     "technologies": ["TypeScript", "Angular", "VSCode API"]
   },
   {
     "company": "Zühlke",
     "duration": { "from": "2019", "to": "2022" },
-    "descriptionBullets": [
-      "Developed and improved user-friendly interfaces across various platforms. Supported backend integration for improved system cohesion.",
-      "Oversaw team progress, ensuring timely delivery of milestones and coordinating tasks effectively",
-      "Worked closely with web and interaction designers, UX teams, and backend developers to ensure seamless project integration.",
-      "Developed cross-browser compatible libraries, conducted extensive testing, and provided ongoing maintenance and support."
-    ],
+    "descriptionBullets": ["zuehlke-0", "zuehlke-1", "zuehlke-2", "zuehlke-3"],
     "technologies": ["TypeScript", "Angular", "Stencil", "React"]
   },
   {
     "company": "MaibornWolff",
     "duration": { "from": "2017", "to": "2018" },
     "descriptionBullets": [
-      "Developed immersive VR and AR applications using Unity, leveraging cuttingedge technologies to create engaging user experiences.",
-      "Explored cutting edge VR and AR technologies with the intent to extract value for potential users",
-      "Contributed innovative ideas and solutions to enhance the functionality and user experience of the applications."
+      "maiborn-wolff-0",
+      "maiborn-wolff-2",
+      "maiborn-wolff-2"
     ],
     "technologies": ["Unity", "Virtual Reality", "C#"]
   },
   {
     "company": "BMW",
     "duration": { "from": "2016", "to": "2017" },
-    "descriptionBullets": [
-      "Explored and implemented a custom interior control app for the users smartphone, focusing on improving user experience and comfort",
-      "Reverse engineered existing interior control functionalities to refine and integrate them into a more intelligent and comprehensive system"
-    ],
+    "descriptionBullets": ["bmw-0", "bmw-1"],
     "technologies": ["Android", "Reverse Engineering"]
   },
   {
     "company": "KundoXT",
     "duration": { "from": "2016", "to": "" },
-    "descriptionBullets": [
-      "Developed a platform-agnostic smart home app",
-      "Implemented features full-stack where appropriate"
-    ],
+    "descriptionBullets": ["kundo-0", "kundo-1"],
     "technologies": ["JavaScript", "Angular", "Apache Cordova"]
   },
   {
     "company": "Audi",
     "duration": { "from": "2015", "to": "" },
-    "descriptionBullets": [
-      "Reverse engineered existing interior control functionalities to refine and integrate them into a more intelligent and comprehensive system"
-    ],
+    "descriptionBullets": ["audi-0"],
     "technologies": ["Unity", "Virtual Reality", "C#"]
   }
 ]

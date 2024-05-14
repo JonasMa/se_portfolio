@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import Chips from './chips';
+import { Trans } from 'react-i18next';
 
 export interface CompanyExperience {}
 
@@ -53,7 +54,7 @@ const Jobs: React.FC = () => {
             className="text-m list-disc marker:text-blue-light"
           >
             {descriptionBullets.map((bullet, bulletIndex) => (
-              <li key={bulletIndex}>{bullet}</li>
+              <li key={bulletIndex}><Trans i18nKey={bullet}/></li>
             ))}
           </ul>,
           <Chips key={`${index}-2`} className="col-start-2" chips={technologies}/>,

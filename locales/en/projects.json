@@ -1,0 +1,45 @@
+{
+    "artifacts": "Artifacts",
+    
+    "google-0": "Optimizing code review process for Google software engineers.",
+    "google-1": "Analyzing utilization patterns and identified opportunities to optimize usage, resulting in increased efficiency and productivity.",
+    "google-2": "Independently worked on identifying, conceptualizing and developing new features, collaborating with team members for planning and alignment.",
+    "google-3": "Ensured highest quality of work through thorough testing, code reviews, and adherence to best practices and standards.",
+  
+    "visana-0": "Developed an online insurance calculator.",
+    "visana-1": "Designed and developed components for the product.",
+    "visana-2": "Onboarding new team members.",
+    "visana-3": "Supported backend integration for improved system cohesion.",
+    "visana-4": "Oversaw team progress, ensuring timely delivery of milestones and coordinating tasks effectively.",
+    "visana-5": "Worked closely with web and interaction designers, UX teams, and backend developers to ensure seamless project integration.",
+    
+    "sbb-00": "Technological redevelopment of the ticket vending machine.",
+    "sbb-01": "Implementation, analysis, and testing of the user interface.",
+    "sbb-02": "Supported backend integration for improved system cohesion.",
+    "sbb-03": "Worked closely with web and interaction designers, UX teams, and backend developers to ensure seamless project integration.",
+ 
+    "sbb-10": "Developed cross-browser compatible library, conducted extensive testing, and provided ongoing maintenance and support.",
+
+    
+    "zuehlke-0": "Led frontend development for a mobile-first training quiz.",
+    "zuehlke-1": "Coordination, planning, technical implementation, and testing.",
+  
+    
+    "maiborn-wolff-0": "Developed immersive VR and AR applications using Unity, leveraging cuttingedge technologies to create engaging user experiences.",
+    "maiborn-wolff-1": "Explored cutting edge VR and AR technologies with the intent to extract value for potential users",
+    "maiborn-wolff-2": "Contributed innovative ideas and solutions to enhance the functionality and user experience of the applications.",
+  
+    
+    "bmw-0": "Exploratory development of concepts for in-vehicle interior controls.",
+    "bmw-1": "Technical analysis and reverse engineering of existing technologies.",
+  
+    
+    "kundo-0": "Led the implementation of a smart home control system.",
+    "kundo-1": "Technical conception, implementation, and collaboration between different teams.",
+  
+    
+    "audi-0": "Researched and implemented an in-car VR experience using live vehicle data.",
+    "audi-1": "Implemented connection between car and PC.",
+    "audi-2": "Researched user acceptance and motion sickness of the prototype."
+  
+}

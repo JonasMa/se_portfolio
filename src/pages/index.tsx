@@ -1,9 +1,11 @@
 import React, { useRef, useState } from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import type { HeadFC, PageProps } from 'gatsby';
 import CV from '../components/cv';
 import SocialMediaIcons from '../components/social';
 import Menu, { MenuItem } from '../components/menu';
+import '../../i18n';
+import { useTranslation, Trans } from 'react-i18next';
 
 const IndexPage: React.FC<PageProps> = () => {
   const [selectedItem, setSelectedItem] = useState<MenuItem>('about');
@@ -19,7 +21,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <header>
           <h1 className="text-6xl font-bold text-yellow">Jonas Mattes</h1>
           <h2 className="font-mono text-blue-light">
-            Software Engineer who loves to build intuitive web experiences.
+            <Trans i18nKey="subtitle"/>
           </h2>
         </header>
         <Menu selectedItem={selectedItem} onItemSelected={onItemSelected} />
@@ -43,20 +45,28 @@ const IndexPage: React.FC<PageProps> = () => {
 export default IndexPage;
 
 export const Head: HeadFC = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          description
-        }
-      }
-    }
-  `);
+  const { t, i18n } = useTranslation();
   return (
     <>
       <title>Jonas Mattes</title>
-      <html lang="en" />
-      <meta name="description" content={data.site.siteMetadata.description} />
+      <html lang={i18n.language} />
+      <meta name="description" content={t('meta-description') || ''} />
     </>
   );
 };
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(
+      filter: { ns: { in: ["index", "jobs", "projects"] }, language: { eq: $language } }
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

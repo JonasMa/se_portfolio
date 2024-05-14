@@ -1,10 +1,10 @@
 import type { GatsbyConfig } from 'gatsby';
+const { languages, defaultLanguage } = require('./languages');
 
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Jonas Mattes`,
     siteUrl: `https://jmattes.de`,
-    description: `Welcome to the digital portfolio of Jonas Mattes, a seasoned web developer with a penchant for crafting state-of-the-art, responsive, and robust web experiences. With a background at Google and a passion for user-centered design, Jonas specializes in creating beautiful, functional, and accessible websites that prioritize user experience. Explore Jonas's journey into web development and discover how he brings together design and functionality to create digital experiences that delight users`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -16,8 +16,16 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: './content/',
-      },
+        path: `./content/`,
+        name: `pages`
+      }
+    }, 
+   {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/locales`,
+        name: `locale`
+      }
     },
     {
       resolve: 'gatsby-plugin-manifest',
@@ -26,6 +34,23 @@ const config: GatsbyConfig = {
         icon: `src/images/icon.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        languages,
+        defaultLanguage,
+        siteUrl: `https://jmattes.de`,
+        i18nextOptions: {
+          debug: true,
+          fallbackLng: defaultLanguage,
+          supportedLngs: languages,
+          defaultNS: 'common',
+          interpolation: {
+            escapeValue: false, // not needed for react as it escapes by default
+          }
+        },
+      }
+    }
   ],
 };
 

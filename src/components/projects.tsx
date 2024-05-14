@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 import Chips from './chips';
+import { Trans } from 'react-i18next';
 
 export interface CompanyExperience {}
 
@@ -59,13 +60,13 @@ const Projects: React.FC = () => {
             <h4 className="font-sans font-bold mb-4">{title}</h4>
             <ul className="text-m list-disc marker:text-blue-light">
               {descriptionBullets.map((bullet, bulletIndex) => (
-                <li key={bulletIndex}>{bullet}</li>
+                <li key={bulletIndex}><Trans i18nKey={bullet}/></li>
               ))}
             </ul>
             {link && (
               <div className="col-start-2 underline text-blue-light mt-2">
                 <a href={link} target="_blank">
-                  Artifacts
+                  <Trans i18nKey="artifacts"/>
                 </a>
               </div>
             )}

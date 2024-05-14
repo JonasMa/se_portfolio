@@ -4,6 +4,7 @@ import Disclaimer from './disclaimer';
 import { MenuItem } from './menu';
 import Projects from './projects';
 import CvSection from './cv-section';
+import { Trans } from 'react-i18next';
 
 // Jobs does some JSON parsing and may block inital render.
 const Jobs = lazy(() => import('./jobs'));
@@ -37,13 +38,7 @@ const CV: FC<{
         ref={sectionRefs.about}
         onInView={() => onScrolledIntoView('about')}
       >
-        With a journey that began somewhat by chance in computer science, I
-        quickly found my passion in the user-centered realm of web development.
-        Over the past five years, I've honed my skills, specializing in crafting
-        beautiful, functional, and accessible websites that prioritize user
-        experience. Comfortable navigating the entire stack, I thrive on
-        bringing together design and functionality to create digital experiences
-        that delight users.
+        <Trans i18nKey="about"/>
       </CvSection>
       <CvSection
         title="Experience"
