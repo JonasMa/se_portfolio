@@ -41,7 +41,7 @@ const config: GatsbyConfig = {
         defaultLanguage,
         siteUrl: `https://jmattes.de`,
         i18nextOptions: {
-          debug: true,
+          debug: false,
           fallbackLng: defaultLanguage,
           supportedLngs: languages,
           defaultNS: 'common',
