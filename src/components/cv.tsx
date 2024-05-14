@@ -2,12 +2,12 @@ import React, { useEffect, Suspense, lazy, FC, useRef } from 'react';
 import Loader from './loader';
 import Disclaimer from './disclaimer';
 import { MenuItem } from './menu';
-import Projects from './projects';
 import CvSection from './cv-section';
 import { Trans } from 'react-i18next';
 
 // Jobs does some JSON parsing and may block inital render.
 const Jobs = lazy(() => import('./jobs'));
+const Projects = lazy(() => import('./projects'));
 
 const CV: FC<{
   scrollToSection?: MenuItem;
