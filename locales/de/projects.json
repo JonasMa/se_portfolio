@@ -1,0 +1,39 @@
+{
+    "artifacts": "Artefakte",
+    
+    "google-0": "Optimierung des Code-Review-Prozesses für Google-Softwareingenieure.",
+    "google-1": "Analyse von Nutzungsmustern und Identifizierung von Optimierungsmöglichkeiten, was zu gesteigerter Effizienz und Produktivität führte.",
+    "google-2": "Arbeitete eigenständig an der Identifizierung, Konzeption und Entwicklung neuer Funktionen, in Zusammenarbeit mit Teammitgliedern für Planung und Abstimmung.",
+    "google-3": "Sicherstellung höchster Arbeitsqualität durch gründliche Tests, Code-Reviews und Einhaltung bewährter Verfahren und Standards.",
+  
+    "visana-0": "Entwicklung eines Online-Versicherungsrechners.",
+    "visana-1": "Entwurf und Entwicklung von Komponenten für das Produkt.",
+    "visana-2": "Einarbeitung neuer Teammitglieder.",
+    "visana-3": "Unterstützung der Backend-Integration für eine verbesserte Systemkohärenz.",
+    "visana-4": "Überwachung des Teamfortschritts, Sicherstellung fristgerechter Meilensteinerreichung und effektive Koordination der Aufgaben.",
+    "visana-5": "Enge Zusammenarbeit mit Web- und Interaktionsdesignern, UX-Teams und Backend-Entwicklern zur Gewährleistung einer nahtlosen Projektintegration.",
+    
+    "sbb-00": "Technologische Neuentwicklung des Fahrkartenautomaten.",
+    "sbb-01": "Implementierung, Analyse und Testen der Benutzeroberfläche.",
+    "sbb-02": "Unterstützung der Backend-Integration für eine verbesserte Systemkohärenz.",
+    "sbb-03": "Enge Zusammenarbeit mit Web- und Interaktionsdesignern, UX-Teams und Backend-Entwicklern zur Gewährleistung einer nahtlosen Projektintegration.",
+ 
+    "sbb-10": "Entwicklung einer plattformübergreifenden Bibliothek, Durchführung umfangreicher Tests und Bereitstellung fortlaufender Wartung und Unterstützung.",
+    
+    "zuehlke-0": "Leitung der Frontend-Entwicklung für ein Mobile-First-Training-Quiz.",
+    "zuehlke-1": "Koordination, Planung, technische Umsetzung und Testen.",
+    
+    "maiborn-wolff-0": "Entwicklung immersiver VR- und AR-Anwendungen mit Unity und Nutzung fortschrittlicher Technologien zur Schaffung ansprechender Benutzererlebnisse.",
+    "maiborn-wolff-1": "Erforschung fortschrittlicher VR- und AR-Technologien mit dem Ziel, Nutzen für potenzielle Benutzer zu gewinnen.",
+    "maiborn-wolff-2": "Beitrag innovativer Ideen und Lösungen zur Verbesserung der Funktionalität und Benutzererfahrung der Anwendungen.",
+    
+    "bmw-0": "Erforschung und Entwicklung von Konzepten für In-Vehicle-Interior-Kontrollen.",
+    "bmw-1": "Technische Analyse und Reverse-Engineering bestehender Technologien.",
+    
+    "kundo-0": "Leitung der Implementierung eines Smart-Home-Steuerungssystems.",
+    "kundo-1": "Technische Konzeption, Implementierung und Zusammenarbeit zwischen verschiedenen Teams.",
+    
+    "audi-0": "Forschung und Implementierung einer In-Car-VR-Erfahrung mit Echtzeitfahrzeugdaten.",
+    "audi-1": "Implementierung der Verbindung zwischen Auto und PC.",
+    "audi-2": "Untersuchung der Benutzerakzeptanz und Reisekrankheit des Prototyps."
+}
