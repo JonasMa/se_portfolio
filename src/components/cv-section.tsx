@@ -6,22 +6,13 @@ const CvSection = forwardRef<
   {
     title: string;
     children: ReactNode;
-    onInView: () => void;
     onViewChange: (inView: boolean) => void;
   }
->(({ children, title, onInView, onViewChange }, ref) => {
-
-
-  const onChange = (inView: boolean) => {
-    if (inView) {
-      onInView();
-    }
-    onViewChange(inView);
-  };
+>(({ children, title, onViewChange }, ref) => {
   return (
     <InView
       as="div"
-      onChange={onChange}
+      onChange={(inView) => onViewChange(inView)}
       threshold={0}
       rootMargin="-25% 0px -55% 0px"
     >

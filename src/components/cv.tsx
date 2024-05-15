@@ -1,10 +1,11 @@
-import React, { useEffect, Suspense, lazy, FC, useRef } from 'react';
+import React, { useEffect, Suspense, lazy, FC, useRef, useState } from 'react';
 import Loader from './loader';
 import Disclaimer from './disclaimer';
 import { MenuItem } from './menu';
 import CvSection from './cv-section';
 import { Trans } from 'react-i18next';
 import { useFocusedSection } from '../hooks/useFocusedSection';
+import { useScrollSmooth } from '../hooks/useScrollSmooth';
 
 // Jobs does some JSON parsing and may block inital render.
 const Jobs = lazy(() => import('./jobs'));
@@ -20,49 +21,55 @@ const CV: FC<{
     projects: useRef(null),
   };
 
-  useEffect(() => {
-    if (!scrollToSection) return;
+  const [isAutoScrolling, setIsAutoScrolling] = useState(false);
+  const [scrollSmooth] = useScrollSmooth();
 
+  const scrollWrapper = async (section: MenuItem) => {
     const top =
-      scrollToSection === 'about'
-        ? 0
-        : sectionRefs[scrollToSection].current?.offsetTop - 64;
-    window.requestAnimationFrame(() => {
-      window.scrollTo({ top, behavior: 'smooth' });
-    });
+      section === 'about' ? 0 : sectionRefs[section].current?.offsetTop - 64;
+    setIsAutoScrolling(true);
+    await scrollSmooth(top);
+    setIsAutoScrolling(false);
+  };
+
+  useEffect(() => {
+    if (!scrollToSection) {
+      return;
+    }
+
+    scrollWrapper(scrollToSection);
   }, [scrollToSection]);
-  
+
   const [focusedSection, addSection, removeSection] = useFocusedSection();
 
-
-  useEffect(()=>{
-    if(!focusedSection) return;
+  useEffect(() => {
+    if (!focusedSection || isAutoScrolling) {
+      return;
+    }
     onScrolledIntoView(focusedSection);
   }, [focusedSection]);
 
   const onViewChange = (isVisible: boolean, item: MenuItem) => {
-    if(isVisible){
+    if (isVisible) {
       addSection(item);
     } else {
       removeSection(item);
     }
-  }
+  };
 
   return (
     <>
       <CvSection
         title="About"
         ref={sectionRefs.about}
-        onInView={() => onScrolledIntoView('about')}
-        onViewChange={(isVisible) => onViewChange(isVisible,'about')}
+        onViewChange={(isVisible) => onViewChange(isVisible, 'about')}
       >
-        <Trans i18nKey="about"/>
+        <Trans i18nKey="about" />
       </CvSection>
       <CvSection
         title="Experience"
         ref={sectionRefs.jobs}
-        onInView={() => onScrolledIntoView('jobs')}
-        onViewChange={(isVisible) => onViewChange(isVisible,'jobs')}
+        onViewChange={(isVisible) => onViewChange(isVisible, 'jobs')}
       >
         <Suspense fallback={<Loader />}>
           <Jobs />
@@ -71,8 +78,7 @@ const CV: FC<{
       <CvSection
         title="Projects"
         ref={sectionRefs.projects}
-        onInView={() => onScrolledIntoView('projects')}
-        onViewChange={(isVisible) => onViewChange(isVisible,'projects')}
+        onViewChange={(isVisible) => onViewChange(isVisible, 'projects')}
       >
         <Suspense fallback={<Loader />}>
           <Projects />
