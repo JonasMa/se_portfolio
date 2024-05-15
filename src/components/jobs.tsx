@@ -54,12 +54,34 @@ const Jobs: React.FC = () => {
             className="text-m list-disc marker:text-blue-light"
           >
             {descriptionBullets.map((bullet, bulletIndex) => (
-              <li key={bulletIndex}><Trans i18nKey={bullet}/></li>
+              <li key={bulletIndex}>
+                <Trans i18nKey={bullet} />
+              </li>
             ))}
           </ul>,
-          <Chips key={`${index}-2`} className="col-start-2" chips={technologies}/>,
+          <Chips
+            key={`${index}-2`}
+            className="col-start-2"
+            chips={technologies}
+          />,
         ]
       )}
+      <a
+        className="hidden md:block font-sans text-blue-light justify-self-end"
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        &rarr;
+      </a>
+      <a
+        className="font-sans text-blue-light underline col-start-2"
+        href="/resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Trans i18nKey="resume" />
+      </a>
     </div>
   );
 };
