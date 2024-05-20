@@ -1,7 +1,7 @@
 import type { HeadFC, PageProps } from 'gatsby';
 import { graphql, Link } from 'gatsby';
 import React, { useRef, useState } from 'react';
-import { Trans, useTranslation } from 'react-i18next';
+import { Trans, initReactI18next, useTranslation } from 'react-i18next';
 import CV from '../components/cv';
 import Menu, { MenuItem } from '../components/menu';
 import SocialMediaIcons from '../components/social';
@@ -17,7 +17,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <div className="lg:flex gap-8 px-4 container mx-auto min-h-screen">
-      <div className="py-20 lg:pt-32 lg:sticky lg:top-0 lg:self-start lg:w-2/5 lg:min-h-screen flex flex-col gap-4 lg:justify-between">
+      <div className="py-20 lg:pt-32 lg:sticky lg:top-0 lg:self-start lg:w-1/2 lg:min-h-screen flex flex-col gap-4 lg:justify-between">
         <header>
           <h1 className="text-6xl font-bold text-yellow">Jonas Mattes</h1>
           <h2 className="font-mono text-blue-light">
@@ -32,7 +32,7 @@ const IndexPage: React.FC<PageProps> = () => {
           </Link>
         </footer>
       </div>
-      <main className="lg:pt-36 lg:pb-20 lg:w-3/5 font-mono text-sm text-white overflow-y-auto flex-shrink-0">
+      <main className="lg:pt-36 lg:pb-20 lg:w-1/2 font-mono text-sm text-white overflow-y-auto flex-shrink-0">
         <CV
           scrollToSection={scrollTo.current}
           onScrolledIntoView={setSelectedItem}
