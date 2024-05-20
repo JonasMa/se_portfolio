@@ -9,7 +9,7 @@ export interface Project {
   company: string;
   title: string;
   duration: { from: string; to: string };
-  descriptionBullets: string[];
+  description: string;
   technologies: string[];
   link: string;
 }
@@ -26,7 +26,7 @@ const Projects: React.FC = () => {
               from
               to
             }
-            descriptionBullets
+            description
             technologies
             link
           }
@@ -43,7 +43,7 @@ const Projects: React.FC = () => {
     <div className="flex flex-col md:grid md:grid-cols-2-auto gap-x-8 gap-y-4">
       {projects.map(
         (
-          { company, title, duration, descriptionBullets, technologies, link },
+          { company, title, duration, description, technologies, link },
           index
         ) => [
           <div
@@ -58,17 +58,11 @@ const Projects: React.FC = () => {
           </div>,
           <div key={`${index}-1`}>
             <h4 className="font-sans font-bold mb-4">{title}</h4>
-            <ul className="text-m list-disc marker:text-blue-light">
-              {descriptionBullets.map((bullet, bulletIndex) => (
-                <li key={bulletIndex}>
-                  <Trans i18nKey={bullet} />
-                </li>
-              ))}
-            </ul>
+            <Trans i18nKey={`projects.${description}`} />
             {link && (
               <div className="col-start-2 underline text-blue-light mt-2">
                 <a href={link} target="_blank" rel="noreferrer">
-                  <Trans i18nKey="artifacts" />
+                  <Trans i18nKey="projects.artifacts" />
                 </a>
               </div>
             )}

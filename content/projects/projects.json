@@ -3,22 +3,23 @@
     "company": "Google",
     "title": "Streamlining Code Review",
     "duration": { "from": "2022", "to": "2023" },
-    "descriptionBullets": ["google-0", "google-1", "google-2", "google-3"],
-    "technologies": ["Angular", "TypeScript", "VSCode API", "Jest"],
+    "description": "critique",
+    "technologies": ["Angular", "TypeScript", "NgRx", "RxJs"],
+    "link": ""
+  },
+  {
+    "company": "Google",
+    "title": "Code Review IDE Integration",
+    "duration": { "from": "2022", "to": "2023" },
+    "description": "cider",
+    "technologies": ["TypeScript", "VSCode API", "RxJs"],
     "link": ""
   },
   {
     "company": "Visana",
     "title": "Insurance Calculator",
     "duration": { "from": "2021", "to": "2022" },
-    "descriptionBullets": [
-      "visana-0",
-      "visana-1",
-      "visana-2",
-      "visana-3",
-      "visana-4",
-      "visana-5"
-    ],
+    "description": "visana",
     "technologies": [
       "Angular",
       "TypeScript",
@@ -31,9 +32,9 @@
   },
   {
     "company": "SBB",
-    "title": "Modernize the Ticket Vending Maching",
+    "title": "Modernize the Ticket Vending Machine",
     "duration": { "from": "2020", "to": "2021" },
-    "descriptionBullets": ["sbb-00", "sbb-01", "sbb-02", "sbb-03"],
+    "description": "sbb-ticket",
     "technologies": [
       "TypeScript",
       "Stencil",
@@ -48,15 +49,15 @@
     "company": "SBB",
     "title": "Custom Tracking Library",
     "duration": { "from": "2020", "to": "2021" },
-    "descriptionBullets": ["sbb-10"],
-    "technologies": ["JavaScript", "Karma", "Puppeteer", "Babel", "Webpack"],
+    "description": "sbb-tracking",
+    "technologies": ["JavaScript", "Karma", "Babel", "Webpack", "BrowserStack"],
     "link": "https://www.npmjs.com/package/@swissfederalrailways/internet-tracking"
   },
   {
     "company": "Zühlke",
     "title": "Mobile Security Training Quiz",
     "duration": { "from": "2019", "to": "2020" },
-    "descriptionBullets": ["zuehlke-0", "zuehlke-1"],
+    "description": "zuehlke",
     "technologies": ["React", "JavaScript", "Redux", "Jest"],
     "link": "https://appsource.microsoft.com/en-us/product/web-apps/zuehlke-engineering.secured"
   },
@@ -64,19 +65,15 @@
     "company": "MaibornWolff",
     "title": "Technological Research in AR & VR",
     "duration": { "from": "2017", "to": "2018" },
-    "descriptionBullets": [
-      "maiborn-wolff-0",
-      "maiborn-wolff-1",
-      "maiborn-wolff-2"
-    ],
-    "technologies": ["Unity", "C#", "ArKit"],
+    "description": "maiborn-wolff",
+    "technologies": ["Unity", "C#", "HoloLens"],
     "link": ""
   },
   {
     "company": "BMW",
     "title": "Car Interior Control System Prototype",
     "duration": { "from": "2016", "to": "2017" },
-    "descriptionBullets": ["bmw-0", "bmw-1"],
+    "description": "bmw",
     "technologies": ["Android", "Java", "Reverse Engineering"],
     "link": ""
   },
@@ -84,7 +81,7 @@
     "company": "KundoXT",
     "title": "Smart Home Control",
     "duration": { "from": "2016", "to": "" },
-    "descriptionBullets": ["kundo-0", "kundo-1"],
+    "description": "kundo",
     "technologies": ["Angular", "JavaScript", "Apache Cordova"],
     "link": ""
   },
@@ -92,7 +89,7 @@
     "company": "Audi",
     "title": "In-Car VR Experience Prototype",
     "duration": { "from": "2015", "to": "" },
-    "descriptionBullets": ["audi-0", "audi-1", "audi-2"],
+    "description": "audi",
     "technologies": ["Unity", "C#", "ADTF", "C++"],
     "link": "https://www.techradar.com/news/say-hello-to-holoride-audis-revolutionary-in-car-vr-platform"
   }
