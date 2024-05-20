@@ -4,7 +4,6 @@ import type { HeadFC, PageProps } from 'gatsby';
 import CV from '../components/cv';
 import SocialMediaIcons from '../components/social';
 import Menu, { MenuItem } from '../components/menu';
-import '../../i18n';
 import { useTranslation, Trans } from 'react-i18next';
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -21,7 +20,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <header>
           <h1 className="text-6xl font-bold text-yellow">Jonas Mattes</h1>
           <h2 className="font-mono text-blue-light">
-            <Trans i18nKey="subtitle"/>
+            <Trans i18nKey="subtitle" />
           </h2>
         </header>
         <Menu selectedItem={selectedItem} onItemSelected={onItemSelected} />
@@ -58,7 +57,10 @@ export const Head: HeadFC = () => {
 export const query = graphql`
   query ($language: String!) {
     locales: allLocale(
-      filter: { ns: { in: ["index", "jobs", "projects"] }, language: { eq: $language } }
+      filter: {
+        ns: { in: ["index", "jobs", "projects"] }
+        language: { eq: $language }
+      }
     ) {
       edges {
         node {
