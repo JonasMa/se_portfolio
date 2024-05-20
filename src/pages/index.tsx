@@ -16,7 +16,7 @@ const IndexPage: React.FC<PageProps> = () => {
   };
 
   return (
-    <div className="lg:flex gap-8 px-4 container mx-auto min-h-screen">
+    <div className="lg:flex gap-8 px-4 mb-16 lg:mb-0 container mx-auto min-h-screen">
       <div className="py-20 lg:pt-32 lg:sticky lg:top-0 lg:self-start lg:w-1/2 lg:min-h-screen flex flex-col gap-4 lg:justify-between">
         <header>
           <h1 className="text-6xl font-bold text-yellow">Jonas Mattes</h1>

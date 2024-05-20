@@ -120,7 +120,7 @@ const CV: FC<{
           <Projects />
         </Suspense>
       </CvSection>
-      <section className="my-16 font-sans text-blue-light">
+      <section className="mt-16 font-sans text-blue-light">
         <Disclaimer />
       </section>
     </>
