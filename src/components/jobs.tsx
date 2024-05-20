@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
-import Chips from './chips';
 import { Trans } from 'react-i18next';
+import Chips from './chips';
 
 export interface CompanyExperience {}
 

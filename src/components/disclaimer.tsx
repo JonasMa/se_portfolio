@@ -7,11 +7,11 @@ const Disclaimer: React.FC = () => {
       <strong>Gatsby</strong> and <strong>Tailwind CSS</strong>. Check it out on
       my{' '}
       <strong className="underline">
-        <a href="https://github.com/JonasMa/se_portfolio" target="_blank">
+        <a href="https://github.com/JonasMa/se_portfolio" target="_blank" rel="noreferrer">
           GitHub
         </a>
       </strong>{' '}
-      if you're interested.
+      if you&apos;re interested.
       <br />
       The website design and functionality is heavily inspired by{' '}
       <a

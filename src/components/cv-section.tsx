@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactNode, useEffect, useState } from 'react';
+import React, { forwardRef, ReactNode } from 'react';
 import { InView } from 'react-intersection-observer';
 
 const CvSection = forwardRef<
@@ -21,5 +21,7 @@ const CvSection = forwardRef<
     </InView>
   );
 });
+
+CvSection.displayName = 'CvSection';
 
 export default CvSection;

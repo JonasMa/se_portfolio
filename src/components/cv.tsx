@@ -1,11 +1,11 @@
-import React, { useEffect, Suspense, lazy, FC, useRef, useState } from 'react';
-import Loader from './loader';
-import Disclaimer from './disclaimer';
-import { MenuItem } from './menu';
-import CvSection from './cv-section';
+import React, { FC, lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { Trans } from 'react-i18next';
 import { useFocusedSection } from '../hooks/useFocusedSection';
 import { useScrollSmooth } from '../hooks/useScrollSmooth';
+import CvSection from './cv-section';
+import Disclaimer from './disclaimer';
+import Loader from './loader';
+import { MenuItem } from './menu';
 
 // Jobs does some JSON parsing and may block inital render.
 const Jobs = lazy(() => import('./jobs'));
@@ -15,7 +15,9 @@ const CV: FC<{
   scrollToSection?: MenuItem;
   onScrolledIntoView: (item: MenuItem) => void;
 }> = ({ scrollToSection, onScrolledIntoView }) => {
-  const sectionRefs: { [key in MenuItem]: any } = {
+  const sectionRefs: {
+    [key in MenuItem]: React.MutableRefObject<HTMLElement | null>;
+  } = {
     about: useRef(null),
     jobs: useRef(null),
     projects: useRef(null),
@@ -25,8 +27,12 @@ const CV: FC<{
   const [scrollSmooth] = useScrollSmooth();
 
   const scrollWrapper = async (section: MenuItem) => {
-    const top =
-      section === 'about' ? 0 : sectionRefs[section].current?.offsetTop - 64;
+    const element = sectionRefs[section]?.current;
+    if (!element) {
+      throw new Error(`No section ref found for ${section}.`);
+    }
+
+    const top = section === 'about' ? 0 : element.offsetTop - 64;
     setIsAutoScrolling(true);
     await scrollSmooth(top);
     setIsAutoScrolling(false);

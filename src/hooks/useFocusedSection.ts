@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, MutableRefObject } from 'react';
+import { useEffect, useState } from 'react';
 import { MenuItem } from '../components/menu';
 
 interface UseBufferedVisibility {

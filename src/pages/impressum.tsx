@@ -3,7 +3,9 @@ import { Link } from 'gatsby';
 
 const Impressum: React.FC = () => (
   <div className="container font-mono text-white mx-auto py-12">
-    <Link to="/" className="block text-xl text-yellow mb-4">&lt;</Link>
+    <Link to="/" className="block text-xl text-yellow mb-4">
+      &lt;
+    </Link>
     <h2 className="font-bold text-xl text-yellow">Impressum</h2>
     <br />
     <p>
@@ -37,7 +39,7 @@ const Impressum: React.FC = () => (
     <br />
     § 2 Externe Links
     <br />
-    Diese Website enthält Verknüpfungen zu Websites Dritter ("externe Links").
+    Diese Website enthält Verknüpfungen zu Websites Dritter (&quot;externe Links&quot;).
     Diese Websites unterliegen der Haftung der jeweiligen Betreiber. Der
     Anbieter hat bei der erstmaligen Verknüpfung der externen Links die fremden
     Inhalte daraufhin überprüft, ob etwaige Rechtsverstöße bestehen. Zu dem

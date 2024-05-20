@@ -1,10 +1,10 @@
-import React, { useRef, useState } from 'react';
-import { Link, graphql } from 'gatsby';
 import type { HeadFC, PageProps } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import React, { useRef, useState } from 'react';
+import { Trans, useTranslation } from 'react-i18next';
 import CV from '../components/cv';
-import SocialMediaIcons from '../components/social';
 import Menu, { MenuItem } from '../components/menu';
-import { useTranslation, Trans } from 'react-i18next';
+import SocialMediaIcons from '../components/social';
 
 const IndexPage: React.FC<PageProps> = () => {
   const [selectedItem, setSelectedItem] = useState<MenuItem>('about');
