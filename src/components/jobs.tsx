@@ -8,11 +8,12 @@ export interface CompanyExperience {}
 export interface Job {
   company: string;
   duration: { from: string; to: string };
-  descriptionBullets: string[];
+  description: string;
   technologies: string[];
 }
 
 const Jobs: React.FC = () => {
+  // TODO: do this server side
   const jobsData = useStaticQuery(graphql`
     query {
       allJobsJson {
@@ -23,7 +24,7 @@ const Jobs: React.FC = () => {
               from
               to
             }
-            descriptionBullets
+            description
             technologies
           }
         }
@@ -37,35 +38,29 @@ const Jobs: React.FC = () => {
 
   return (
     <div className="flex flex-col md:grid md:grid-cols-2-auto gap-x-8 gap-y-4">
-      {jobs.map(
-        ({ company, duration, descriptionBullets, technologies }, index) => [
-          <div
-            key={`${index}-0`}
-            className="whitespace-nowrap flex justify-between md:block"
-          >
-            <h4 className="font-sans font-bold">{company}</h4>
-            <p className="text-blue-light">
-              {duration.from}
-              {duration.to && ' - ' + duration.to}
-            </p>
-          </div>,
-          <ul
-            key={`${index}-1`}
-            className="text-m list-disc marker:text-blue-light"
-          >
-            {descriptionBullets.map((bullet, bulletIndex) => (
-              <li key={bulletIndex}>
-                <Trans i18nKey={bullet} />
-              </li>
-            ))}
-          </ul>,
-          <Chips
-            key={`${index}-2`}
-            className="col-start-2"
-            chips={technologies}
-          />,
-        ]
-      )}
+      {jobs.map(({ company, duration, description, technologies }, index) => [
+        <div
+          key={`${index}-0`}
+          className="whitespace-nowrap flex justify-between md:block"
+        >
+          <h4 className="font-sans font-bold">{company}</h4>
+          <p className="text-blue-light">
+            {duration.from}
+            {duration.to && ' - ' + duration.to}
+          </p>
+        </div>,
+        <div
+          key={`${index}-1`}
+          className="text-m list-disc marker:text-blue-light"
+        >
+          <Trans i18nKey={`jobs.${description}`} />
+        </div>,
+        <Chips
+          key={`${index}-2`}
+          className="col-start-2"
+          chips={technologies}
+        />,
+      ])}
       <a
         className="hidden md:block font-sans text-blue-light justify-self-end"
         href="/resume.pdf"
@@ -80,7 +75,7 @@ const Jobs: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Trans i18nKey="resume" />
+        <Trans i18nKey="jobs.resume" />
       </a>
     </div>
   );

@@ -1,24 +1,17 @@
 {
-  "resume": "Download my resume",
-  
-  "google-0": "Analyzed utilization patterns and identified opportunities to optimize usage, resulting in increased efficiency and productivity.",
-  "google-1": "Independently worked on identifying, conceptualizing and developing new features, collaborating with team members for planning and alignment.",
-  "google-2": "Ensured highest quality of work through thorough testing, code reviews, and adherence to best practices and standards",
+  "jobs": {
+    "resume": "Download my resume",
 
-  "zuehlke-0": "Developed and improved user-friendly interfaces across various platforms. Supported backend integration for improved system cohesion.",
-  "zuehlke-1": "Oversaw team progress, ensuring timely delivery of milestones and coordinating tasks effectively",
-  "zuehlke-2": "Worked closely with web and interaction designers, UX teams, and backend developers to ensure seamless project integration.",
-  "zuehlke-3": "Developed cross-browser compatible libraries, conducted extensive testing, and provided ongoing maintenance and support.",
+    "google": "Optimized code review process for Google software engineers by analyzing utilization patterns and identifying opportunities to optimize usage, resulting in increased efficiency productivity and user satisfaction.",
 
-  "maiborn-wolff-0": "Developed immersive VR and AR applications using Unity, leveraging cuttingedge technologies to create engaging user experiences.",
-  "maiborn-wolff-1": "Explored cutting edge VR and AR technologies with the intent to extract value for potential users",
-  "maiborn-wolff-2": "Contributed innovative ideas and solutions to enhance the functionality and user experience of the applications.",
+    "zuehlke": "Build, style, ship and maintain high-quality, customer-facing websites for various clients. Supported backend integration for improved system cohesion.",
 
-  "bmw-0": "Explored and implemented a custom interior control app for the users smartphone, focusing on improving user experience and comfort",
-  "bmw-1": "Reverse engineered existing interior control functionalities to refine and integrate them into a more intelligent and comprehensive system",
+    "maiborn-wolff": "Developed immersive VR and AR applications using Unity with the goal to explore benefits in various business sectors.",
 
-  "kundo-0": "Developed a platform-agnostic smart home app",
-  "kundo-1": "Implemented features full-stack where appropriate",
+    "bmw": "Explored and implemented a custom interior control app for the users smartphone, focusing on improving user experience and comfort.",
 
-  "audi-0": "Reverse engineered existing interior control functionalities to refine and integrate them into a more intelligent and comprehensive system"
+    "kundo": "Lead front end development in a small team developing a platform-agnostic smart home app.",
+
+    "audi": "Implemented an in-car VR prototype and reasearched user acceptance and motion sickness."
+  }
 }

@@ -2,41 +2,37 @@
   {
     "company": "Google",
     "duration": { "from": "2022", "to": "2023" },
-    "descriptionBullets": ["google-0", "google-1", "google-2"],
+    "description": "google",
     "technologies": ["TypeScript", "Angular", "VSCode API"]
   },
   {
     "company": "Zühlke",
     "duration": { "from": "2019", "to": "2022" },
-    "descriptionBullets": ["zuehlke-0", "zuehlke-1", "zuehlke-2", "zuehlke-3"],
+    "description": "zuehlke",
     "technologies": ["TypeScript", "Angular", "Stencil", "React"]
   },
   {
     "company": "MaibornWolff",
     "duration": { "from": "2017", "to": "2018" },
-    "descriptionBullets": [
-      "maiborn-wolff-0",
-      "maiborn-wolff-2",
-      "maiborn-wolff-2"
-    ],
+    "description": "maiborn-wolff",
     "technologies": ["Unity", "Virtual Reality", "C#"]
   },
   {
     "company": "BMW",
     "duration": { "from": "2016", "to": "2017" },
-    "descriptionBullets": ["bmw-0", "bmw-1"],
+    "description": "bmw",
     "technologies": ["Android", "Reverse Engineering"]
   },
   {
     "company": "KundoXT",
     "duration": { "from": "2016", "to": "" },
-    "descriptionBullets": ["kundo-0", "kundo-1"],
+    "description": "kundo",
     "technologies": ["JavaScript", "Angular", "Apache Cordova"]
   },
   {
     "company": "Audi",
     "duration": { "from": "2015", "to": "" },
-    "descriptionBullets": ["audi-0"],
+    "description": "audi",
     "technologies": ["Unity", "Virtual Reality", "C#"]
   }
 ]
