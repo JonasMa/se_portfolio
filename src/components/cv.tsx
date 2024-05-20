@@ -84,15 +84,15 @@ const CV: FC<{
         </span>
       </h3>
       <section>
-        <ul className=" block relative list-disc marker:text-blue-light">
-          <li>- 5 years of experience</li>
-          <li>- Frontend focused</li>
-          <li>- Likes UX and testing</li>
-        </ul>
+        I&apos;m a software engineer with five years of experience, and I
+        especially enjoy working with frontend technologies like Angular and
+        React.
         <div className="flex gap-4">
           <Button href="mailto:contact@jmattes.de">Contact me</Button>
 
-          <Button href="/resume.pdf" color="blue-light">Download resume</Button>
+          <Button href="/resume.pdf" color="blue-light">
+            Download resume
+          </Button>
         </div>
       </section>
       <CvSection
