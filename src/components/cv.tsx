@@ -89,7 +89,11 @@ const CV: FC<{
           <li>- Frontend focused</li>
           <li>- Likes UX and testing</li>
         </ul>
-        <Button href="mailto:contact@jmattes.de">Contact me</Button>
+        <div className="flex gap-4">
+          <Button href="mailto:contact@jmattes.de">Contact me</Button>
+
+          <Button href="/resume.pdf" color="blue-light">Download resume</Button>
+        </div>
       </section>
       <CvSection
         title="About"
