@@ -5,6 +5,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import CV from '../components/cv';
 import Menu, { MenuItem } from '../components/menu';
 import SocialMediaIcons from '../components/social';
+import i18next from 'i18next';
 
 const IndexPage: React.FC<PageProps> = () => {
   const [selectedItem, setSelectedItem] = useState<MenuItem>('about');
@@ -72,3 +73,5 @@ export const query = graphql`
     }
   }
 `;
+
+i18next.use(initReactI18next).init({ lng: 'en' });
