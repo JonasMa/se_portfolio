@@ -6,6 +6,12 @@ import CvSection from './cv-section';
 import Disclaimer from './disclaimer';
 import Loader from './loader';
 import { MenuItem } from './menu';
+import IconAngular from './icons/angular';
+import IconReact from './icons/react';
+import IconHtml from './icons/html';
+import IconCss from './icons/css';
+import IconTypeScript from './icons/typescript';
+import Button from './button';
 
 // Jobs does some JSON parsing and may block inital render.
 const Jobs = lazy(() => import('./jobs'));
@@ -65,6 +71,26 @@ const CV: FC<{
 
   return (
     <>
+      <h3 className="flex justify-between mb-5 mt-16 ">
+        <span className="relative text-base text-blue-light w-[max-content] before:absolute before:inset-0 before:bg-blue-light before:animate-typewriter-6">
+          tl;dr;
+        </span>
+        <span className="flex">
+          <IconAngular />
+          <IconReact />
+          <IconHtml />
+          <IconCss />
+          <IconTypeScript />
+        </span>
+      </h3>
+      <section>
+        <ul className=" block relative list-disc marker:text-blue-light">
+          <li>- 5 years of experience</li>
+          <li>- Frontend focused</li>
+          <li>- Likes UX and testing</li>
+        </ul>
+        <Button href="mailto:contact@jmattes.de">Contact me</Button>
+      </section>
       <CvSection
         title="About"
         ref={sectionRefs.about}

@@ -9,6 +9,16 @@ module.exports = {
       gridTemplateColumns: {
         '2-auto': 'repeat(2, auto)',
       },
+      animation: {
+        'typewriter-6': "typewriter 2s steps(6) forwards",
+      }, 
+      keyframes: {
+        typewriter: {
+          to: {
+            left: "100%"
+          }
+        }
+      }
     },
     colors: {
       'blue-dark': '#023047',
