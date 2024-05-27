@@ -1,7 +1,7 @@
 import type { HeadFC, PageProps } from 'gatsby';
 import { graphql, Link } from 'gatsby';
 import React, { useRef, useState } from 'react';
-import { Trans, initReactI18next, useTranslation } from 'react-i18next';
+import { initReactI18next, Trans, useTranslation } from 'react-i18next';
 import CV from '../components/cv';
 import Menu, { MenuItem } from '../components/menu';
 import SocialMediaIcons from '../components/social';
