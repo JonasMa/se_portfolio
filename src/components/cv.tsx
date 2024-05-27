@@ -2,7 +2,6 @@ import React, { FC, lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { Trans } from 'react-i18next';
 import { useFocusedSection } from '../hooks/useFocusedSection';
 import { useScrollSmooth } from '../hooks/useScrollSmooth';
-import CvSection from './cv-section';
 import Disclaimer from './disclaimer';
 import Loader from './loader';
 import { MenuItem } from './menu';
@@ -84,8 +83,8 @@ const CV: FC<{
         </span>
       </h3>
       <section>
-        I&apos;m a software engineer with five years of experience, and I
-        especially enjoy working with frontend technologies like Angular and
+        I&apos;m a software engineer with five years of experience. I
+        particularly enjoy working with frontend technologies like Angular and
         React.
         <div className="flex gap-4">
           <Button href="mailto:contact@jmattes.de">Contact me</Button>
@@ -95,31 +94,23 @@ const CV: FC<{
           </Button>
         </div>
       </section>
-      <CvSection
-        title="About"
-        ref={sectionRefs.about}
-        onViewChange={(isVisible) => onViewChange(isVisible, 'about')}
-      >
+
+      <h3 className="font-sans text-yellow mb-5 mt-16 text-base">About</h3>
+      <section id="about">
         <Trans i18nKey="about" />
-      </CvSection>
-      <CvSection
-        title="Experience"
-        ref={sectionRefs.jobs}
-        onViewChange={(isVisible) => onViewChange(isVisible, 'jobs')}
-      >
+      </section>
+      <h3 className="font-sans text-yellow mb-5 mt-16 text-base">Experience</h3>
+      <section id="jobs">
         <Suspense fallback={<Loader />}>
           <Jobs />
         </Suspense>
-      </CvSection>
-      <CvSection
-        title="Projects"
-        ref={sectionRefs.projects}
-        onViewChange={(isVisible) => onViewChange(isVisible, 'projects')}
-      >
+      </section>
+      <h3 className="font-sans text-yellow mb-5 mt-16 text-base">Projects</h3>
+      <section id="projects">
         <Suspense fallback={<Loader />}>
           <Projects />
         </Suspense>
-      </CvSection>
+      </section>
       <section className="mt-16 font-sans text-blue-light">
         <Disclaimer />
       </section>

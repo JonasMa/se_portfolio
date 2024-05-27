@@ -1,4 +1,8 @@
 import * as React from 'react';
+import {
+  Menu as ScrollMenu,
+  MenuItem as ScrollMenuItem,
+} from 'react-scroll-menu';
 
 export type MenuItem = 'about' | 'jobs' | 'projects';
 
@@ -10,43 +14,36 @@ interface MenuProps {
 const Item: React.FC<{
   children: React.ReactNode;
   isSelected: boolean;
-  onClick: () => void;
-}> = ({ isSelected, children, onClick }) => {
+}> = ({ isSelected, children }) => {
   return (
-    <li
+    <span
       className={`flex items-center cursor-pointer hover:text-yellow ${isSelected ? 'text-yellow' : 'text-blue-light'}`}
-      onClick={onClick}
     >
       <span
         className={`border-t mr-4 transition-all ${isSelected ? 'w-12 ' : 'w-8'}`}
       ></span>
       {children}
-    </li>
+    </span>
   );
 };
 
-const Menu: React.FC<MenuProps> = ({ selectedItem, onItemSelected }) => {
+const Menu: React.FC<MenuProps> = () => {
+  const [selectedItem, setSelectedItem] = React.useState('about');
   return (
-    <ul className='hidden lg:block w-max flex-grow pt-20'>
-      <Item
-        isSelected={selectedItem === 'about'}
-        onClick={() => onItemSelected('about')}
-      >
-        About
-      </Item>
-      <Item
-        isSelected={selectedItem === 'jobs'}
-        onClick={() => onItemSelected('jobs')}
-      >
-        Experience
-      </Item>
-      <Item
-        isSelected={selectedItem === 'projects'}
-        onClick={() => onItemSelected('projects')}
-      >
-        Projects
-      </Item>
-    </ul>
+    <ScrollMenu
+      className="hidden lg:block w-max flex-grow pt-20"
+      onItemActive={(id) => setSelectedItem(id)}
+    >
+      <ScrollMenuItem sectionId="about" >
+        <Item isSelected={selectedItem === 'about'}>About</Item>
+      </ScrollMenuItem>
+      <ScrollMenuItem sectionId="jobs">
+        <Item isSelected={selectedItem === 'jobs'}>Experience</Item>
+      </ScrollMenuItem>
+      <ScrollMenuItem sectionId="projects">
+        <Item isSelected={selectedItem === 'projects'}>Projects</Item>
+      </ScrollMenuItem>
+    </ScrollMenu>
   );
 };
 
