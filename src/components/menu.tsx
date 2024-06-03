@@ -2,7 +2,7 @@ import * as React from 'react';
 import {
   Menu as ScrollMenu,
   MenuItem as ScrollMenuItem,
-} from 'react-scroll-menu';
+} from 'react-dynamic-scroll-menu';
 
 export type MenuItem = 'about' | 'jobs' | 'projects';
 
