@@ -6,11 +6,6 @@ import {
 
 export type MenuItem = 'about' | 'jobs' | 'projects';
 
-interface MenuProps {
-  selectedItem: MenuItem;
-  onItemSelected: (item: MenuItem) => void;
-}
-
 const Item: React.FC<{
   children: React.ReactNode;
   isSelected: boolean;
@@ -27,7 +22,7 @@ const Item: React.FC<{
   );
 };
 
-const Menu: React.FC<MenuProps> = () => {
+const Menu = () => {
   const [selectedItem, setSelectedItem] = React.useState('about');
   return (
     <ScrollMenu

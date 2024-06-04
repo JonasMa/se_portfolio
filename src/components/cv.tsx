@@ -1,10 +1,7 @@
-import React, { FC, lazy, Suspense, useEffect, useRef, useState } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Trans } from 'react-i18next';
-import { useFocusedSection } from '../hooks/useFocusedSection';
-import { useScrollSmooth } from '../hooks/useScrollSmooth';
 import Disclaimer from './disclaimer';
 import Loader from './loader';
-import { MenuItem } from './menu';
 import IconAngular from './icons/angular';
 import IconReact from './icons/react';
 import IconHtml from './icons/html';
@@ -16,106 +13,52 @@ import Button from './button';
 const Jobs = lazy(() => import('./jobs'));
 const Projects = lazy(() => import('./projects'));
 
-const CV: FC<{
-  scrollToSection?: MenuItem;
-  onScrolledIntoView: (item: MenuItem) => void;
-}> = ({ scrollToSection, onScrolledIntoView }) => {
-  const sectionRefs: {
-    [key in MenuItem]: React.MutableRefObject<HTMLElement | null>;
-  } = {
-    about: useRef(null),
-    jobs: useRef(null),
-    projects: useRef(null),
-  };
+const CV = () => (
+  <>
+    <h3 className="flex justify-between mb-5 mt-16 ">
+      <span className="relative text-base text-blue-light w-[max-content] before:absolute before:inset-0 before:bg-blue-light before:animate-typewriter-6">
+        tl;dr;
+      </span>
+      <span className="flex">
+        <IconAngular />
+        <IconReact />
+        <IconHtml />
+        <IconCss />
+        <IconTypeScript />
+      </span>
+    </h3>
+    <section>
+      I&apos;m a software engineer with five years of experience. I particularly
+      enjoy working with frontend technologies like Angular and React.
+      <div className="flex gap-4">
+        <Button href="mailto:contact@jmattes.de">Contact me</Button>
 
-  const [isAutoScrolling, setIsAutoScrolling] = useState(false);
-  const [scrollSmooth] = useScrollSmooth();
+        <Button href="/resume.pdf" color="blue-light">
+          Download resume
+        </Button>
+      </div>
+    </section>
 
-  const scrollWrapper = async (section: MenuItem) => {
-    const element = sectionRefs[section]?.current;
-    if (!element) {
-      throw new Error(`No section ref found for ${section}.`);
-    }
-
-    const top = section === 'about' ? 0 : element.offsetTop - 64;
-    setIsAutoScrolling(true);
-    await scrollSmooth(top);
-    setIsAutoScrolling(false);
-  };
-
-  useEffect(() => {
-    if (!scrollToSection) {
-      return;
-    }
-
-    scrollWrapper(scrollToSection);
-  }, [scrollToSection]);
-
-  const [focusedSection, addSection, removeSection] = useFocusedSection();
-
-  useEffect(() => {
-    if (!focusedSection || isAutoScrolling) {
-      return;
-    }
-    onScrolledIntoView(focusedSection);
-  }, [focusedSection]);
-
-  const onViewChange = (isVisible: boolean, item: MenuItem) => {
-    if (isVisible) {
-      addSection(item);
-    } else {
-      removeSection(item);
-    }
-  };
-
-  return (
-    <>
-      <h3 className="flex justify-between mb-5 mt-16 ">
-        <span className="relative text-base text-blue-light w-[max-content] before:absolute before:inset-0 before:bg-blue-light before:animate-typewriter-6">
-          tl;dr;
-        </span>
-        <span className="flex">
-          <IconAngular />
-          <IconReact />
-          <IconHtml />
-          <IconCss />
-          <IconTypeScript />
-        </span>
-      </h3>
-      <section>
-        I&apos;m a software engineer with five years of experience. I
-        particularly enjoy working with frontend technologies like Angular and
-        React.
-        <div className="flex gap-4">
-          <Button href="mailto:contact@jmattes.de">Contact me</Button>
-
-          <Button href="/resume.pdf" color="blue-light">
-            Download resume
-          </Button>
-        </div>
-      </section>
-
-      <h3 className="font-sans text-yellow mb-5 mt-16 text-base">About</h3>
-      <section id="about">
-        <Trans i18nKey="about" />
-      </section>
-      <h3 className="font-sans text-yellow mb-5 mt-16 text-base">Experience</h3>
-      <section id="jobs">
-        <Suspense fallback={<Loader />}>
-          <Jobs />
-        </Suspense>
-      </section>
-      <h3 className="font-sans text-yellow mb-5 mt-16 text-base">Projects</h3>
-      <section id="projects">
-        <Suspense fallback={<Loader />}>
-          <Projects />
-        </Suspense>
-      </section>
-      <section className="mt-16 font-sans text-blue-light">
-        <Disclaimer />
-      </section>
-    </>
-  );
-};
+    <h3 className="font-sans text-yellow mb-5 mt-16 text-base">About</h3>
+    <section id="about">
+      <Trans i18nKey="about" />
+    </section>
+    <h3 className="font-sans text-yellow mb-5 mt-16 text-base">Experience</h3>
+    <section id="jobs">
+      <Suspense fallback={<Loader />}>
+        <Jobs />
+      </Suspense>
+    </section>
+    <h3 className="font-sans text-yellow mb-5 mt-16 text-base">Projects</h3>
+    <section id="projects">
+      <Suspense fallback={<Loader />}>
+        <Projects />
+      </Suspense>
+    </section>
+    <section className="mt-16 font-sans text-blue-light">
+      <Disclaimer />
+    </section>
+  </>
+);
 
 export default CV;
